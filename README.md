@@ -1,6 +1,9 @@
 PUGXAutocompleterBundle
 =======================
 
+This is a fork [PUGX/PUGXAutocompleterBundle](https://github.com/PUGX/PUGXAutoCompleterBundle).
+I rolled back php version requirements for personnal needs to php 5.6.
+
 This bundle has a simple, specific purpose: adding an "autocomplete" (also known as "type-ahead")
 field.
 The typical use case is when you get a Many-to-One relation and you need to display a
