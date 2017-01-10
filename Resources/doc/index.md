@@ -4,7 +4,7 @@ PUGXAutocompleterBundle Documentation
 ## 1. Installation
 
 ``` bash
-$ composer require pugx/autocompleter-bundle
+$ composer require vtoulouse/autocompleter-bundle
 ```
 
 ## 2. Configuration
@@ -19,7 +19,7 @@ public function registerBundles()
 {
     $bundles = [
         // ...
-        new PUGX\AutocompleterBundle\PUGXAutocompleterBundle(),
+        new vtoulouse\AutocompleterBundle\PUGXAutocompleterBundle(),
     ];
 }
 ```
@@ -67,7 +67,7 @@ In your FormType, change field type from `entity` to `autocomplete`:
 <?php
 // AppBundle/Form/BookType.php
 // ...
-use PUGX\AutocompleterBundle\Form\Type\AutocompleteType;
+use vtoulouse\AutocompleterBundle\Form\Type\AutocompleteType;
 // ...
 
 class AuthorType extends AbstractType
@@ -169,7 +169,7 @@ Example:
 <?php
 // AppBundle/Form/Type/AuthorFormFilterType.php
 // ...
-use PUGX\AutocompleterBundle\Form\Type\AutocompleteFilterType;
+use vtoulouse\AutocompleterBundle\Form\Type\AutocompleteFilterType;
 // ...
 
 class AuthorFormFilterType extends AbstractType
