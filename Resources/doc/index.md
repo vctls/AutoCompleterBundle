@@ -96,6 +96,7 @@ class DefaultController extends Controller
 {
     public function searchAuthorAction(Request $request)
     {
+        // For jQuery-UI, use the parameter name 'term' instead of 'q'
         $q = $request->query->get('q');
         $results = $this->getDoctrine()->getRepository('AppBundle:Author')->findLikeName($q);
 
@@ -119,7 +120,8 @@ A possible twig template for first action:
 ```jinja
 [{% for author in results -%}
     {{ {id: author.id, label: author.name, value: author.name}|json_encode|raw }}
-    {# use "value" instead of "id" key, if you use jquery-ui #}
+    {# For jQuery-UI: #}
+    {# use "value" instead of "id" and "label" instead of "value" #}
     {%- if not loop.last %},{% endif -%}
 {%- endfor %}]
 ```
