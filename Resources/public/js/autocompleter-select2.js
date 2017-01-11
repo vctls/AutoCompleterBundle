@@ -54,6 +54,9 @@
             }
             $fakeInput.attr('id', 'fake_' + $fakeInput.attr('id'));
             $fakeInput.attr('name', 'fake_' + $fakeInput.attr('name'));
+            // Remove required attribute from the hidden field,
+            // to prevent strange validation behaviour for the user.
+            $this.removeAttr('required');
             $this.hide().after($fakeInput);
             $fakeInput.select2(select2options);
             if ($this.attr('value')) {
