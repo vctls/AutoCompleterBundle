@@ -6,6 +6,8 @@
 
     <parameters>
         <parameter key="pugx_autocompleter.autocomplete.class">PUGX\AutocompleterBundle\Form\Type\AutocompleteType</parameter>
+        <parameter key="pugx_autocompleter.autocomplete_multiple.class">PUGX\AutocompleterBundle\Form\Type
+            \AutocompleteMultipleType</parameter>
         <parameter key="pugx_autocompleter.filter_autocomplete.class">PUGX\AutocompleterBundle\Form\Type\AutocompleteFilterType</parameter>
     </parameters>
 
@@ -13,6 +15,10 @@
         <service id="pugx_autocompleter.autocomplete" class="%pugx_autocompleter.autocomplete.class%">
             <argument type="service" id="doctrine"/>
             <tag name="form.type" alias="autocomplete" />
+        </service>
+        <service id="pugx_autocompleter.autocomplete_multiple" class="%pugx_autocompleter.autocomplete_multiple.class%">
+            <argument type="service" id="doctrine"/>
+            <tag name="form.type" alias="autocomplete_multiple" />
         </service>
         <service id="pugx_autocompleter.filter_autocomplete" class="%pugx_autocompleter.filter_autocomplete.class%">
             <argument type="service" id="doctrine"/>
