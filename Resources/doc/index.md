@@ -58,6 +58,13 @@ Or, if you prefer Select2:
 
 Don't forget to include your stylesheet files.
 
+```jinja
+{% block stylesheets %}
+    <link rel="stylesheet" href="{{ asset("assets/vendor/jquery-ui/themes/base/jquery-ui.min.css") }}">
+    <link rel="stylesheet" href="{{ asset("assets/vendor/jquery-ui/themes/base/autocomplete.css") }}">
+{% endblock %}
+```
+
 Now, suppose you have an `Author` entity, with a related `Book` entity (One-to-Many).
 You want to display an `author` field inside a form describing your book, and you can't
 use a plain `entity` field, since authors are many thousands.
