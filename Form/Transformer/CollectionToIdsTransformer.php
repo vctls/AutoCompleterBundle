@@ -46,7 +46,7 @@ class CollectionToIdsTransformer implements DataTransformerInterface
             array_push($ids, $object->getId());
         }
 
-        return $ids;
+        return implode(',',$ids);
     }
 
     /**
