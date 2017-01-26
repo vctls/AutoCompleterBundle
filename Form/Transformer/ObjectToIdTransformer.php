@@ -41,7 +41,10 @@ class ObjectToIdTransformer implements DataTransformerInterface
             return '';
         }
 
-        return $object->getId();
+        $choice = [];
+        $choice[$object->__toString()] = strval($object->getId());
+
+        return $choice;
     }
 
     /**
@@ -56,7 +59,7 @@ class ObjectToIdTransformer implements DataTransformerInterface
     public function reverseTransform($id)
     {
         if (empty($id)) {
-            return;
+            return null;
         }
         $object = $this->registry->getManagerForClass($this->class)->getRepository($this->class)->find($id);
         if (null === $object) {

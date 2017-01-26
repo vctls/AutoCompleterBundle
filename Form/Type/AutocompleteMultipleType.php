@@ -3,12 +3,19 @@
 namespace PUGX\AutocompleterBundle\Form\Type;
 
 use Doctrine\Common\Persistence\ManagerRegistry;
-use PUGX\AutocompleterBundle\Form\Transformer\CollectionToIdsTransformer;
+use PUGX\AutocompleterBundle\Form\Transformer\CollectionToChoicesTransformer;
+use PUGX\AutocompleterBundle\Loader\MultiChoicesLoader;
 use Symfony\Component\Form\AbstractType;
-use Symfony\Component\Form\Extension\Core\Type\TextType;
+use Symfony\Component\Form\Extension\Core\Type\ChoiceType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
 
+
+/**
+ * Class AutocompleteMultipleType
+ *
+ * @package PUGX\AutocompleterBundle\Form\Type
+ */
 class AutocompleteMultipleType extends AbstractType
 {
     /**
@@ -29,7 +36,7 @@ class AutocompleteMultipleType extends AbstractType
      */
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
-        $transformer = new CollectionToIdsTransformer($this->registry, $options['class']);
+        $transformer = new CollectionToChoicesTransformer($this->registry, $options['class']);
         $builder->addModelTransformer($transformer);
     }
 
@@ -40,6 +47,7 @@ class AutocompleteMultipleType extends AbstractType
     {
         $resolver->setDefaults([
             'invalid_message' => 'The selected item does not exist',
+            'choice_loader' => new MultiChoicesLoader(),
         ]);
         $resolver->setRequired([
             'class',
@@ -54,7 +62,7 @@ class AutocompleteMultipleType extends AbstractType
      */
     public function getParent()
     {
-        return TextType::class;
+        return ChoiceType::class;
     }
 
     /**

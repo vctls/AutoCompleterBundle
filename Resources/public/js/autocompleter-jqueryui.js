@@ -1,6 +1,7 @@
 (function ($) {
     'use strict';
     $.fn.autocompleter = function (options) {
+
         var settings = {
             url_list:   '',
             url_get:    '',
@@ -43,6 +44,7 @@
                 },
                 minLength: settings.min_length
             });
+
             if ($this.val() !== '') {
                 $.ajax({
                     url: (
@@ -55,6 +57,7 @@
                     }
                 });
             }
+
         });
     };
 })(jQuery);
