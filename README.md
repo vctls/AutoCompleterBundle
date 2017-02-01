@@ -22,6 +22,10 @@ Installation
 
 All the installation instructions are located in [documentation](https://github.com/vtoulouse/PUGXAutoCompleterBundle/tree/master/Resources/doc/index.md).
 
+Testing
+-------
+Run vendor/bin/phpunit
+
 License
 -------
 

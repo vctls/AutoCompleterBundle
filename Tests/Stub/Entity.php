@@ -2,10 +2,17 @@
 
 namespace PUGX\AutocompleterBundle\Tests\Stub;
 
-class Entity
+use PUGX\AutocompleterBundle\Form\Transformer\TransformableInterface;
+
+class Entity implements TransformableInterface
 {
     public function getId()
     {
         return 42;
+    }
+
+    public function __toString()
+    {
+        return "forty-two";
     }
 }

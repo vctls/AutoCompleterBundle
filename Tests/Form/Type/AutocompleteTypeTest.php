@@ -36,7 +36,7 @@ class AutocompleteTypeTest extends \PHPUnit_Framework_TestCase
         if (Kernel::VERSION_ID < 20800) {
             $this->assertEquals('text', $type->getParent());
         } else {
-            $this->assertEquals('Symfony\Component\Form\Extension\Core\Type\TextType', $type->getParent());
+            $this->assertEquals('Symfony\Component\Form\Extension\Core\Type\ChoiceType', $type->getParent());
         }
     }
 
