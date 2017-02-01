@@ -1,5 +1,5 @@
 {
-    "name": "vtoulouse/autocompleter-bundle",
+    "name": "vctls/autocompleter-bundle",
     "type": "symfony-bundle",
     "description": "Add an autocomplete type to forms",
     "keywords": ["Symfony", "form", "field"],
