@@ -30,8 +30,8 @@ class AutocompleteType extends AbstractType
      */
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
-        $transformer = new ObjectToIdTransformer($this->registry, $options['class']);
-        $builder->addModelTransformer($transformer);
+        $modelTransformer = new ObjectToIdTransformer($this->registry, $options['class']);
+        $builder->addModelTransformer($modelTransformer);
     }
 
     /**

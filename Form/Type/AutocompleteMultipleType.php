@@ -4,7 +4,7 @@ namespace PUGX\AutocompleterBundle\Form\Type;
 
 use Doctrine\Common\Persistence\ManagerRegistry;
 use PUGX\AutocompleterBundle\Form\Transformer\CollectionToChoicesTransformer;
-use PUGX\AutocompleterBundle\Loader\MultiChoicesLoader;
+use PUGX\AutocompleterBundle\Loader\ChoiceLoader;
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\Extension\Core\Type\ChoiceType;
 use Symfony\Component\Form\FormBuilderInterface;
@@ -47,7 +47,7 @@ class AutocompleteMultipleType extends AbstractType
     {
         $resolver->setDefaults([
             'invalid_message' => 'The selected item does not exist',
-            'choice_loader' => new MultiChoicesLoader(),
+            'choice_loader' => new ChoiceLoader(),
         ]);
         $resolver->setRequired([
             'class',

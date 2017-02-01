@@ -74,7 +74,7 @@ class ChoiceLoader implements ChoiceLoaderInterface
         }
 
         // reset internal choice list
-        $this->choiceList = new ArrayChoiceList($values[0], $value);
+        $this->choiceList = new ArrayChoiceList($choices, $value);
 
         return $choices;
     }
@@ -101,8 +101,36 @@ class ChoiceLoader implements ChoiceLoaderInterface
     {
         // is called on form creat with $choices containing the preset of the bound entity
         $values = array();
+
+        // FIXME I had to check the layout of the given $choices array,
+        // FIXME as for some reason it can come in three forms:
+        /*
+         * [
+         *    0 => [ OPTION => "VALUE" ]
+         * ]
+         *
+         * [
+         *    OPTION => "VALUE"
+         * ]
+         *
+         * [
+         *    0 => "VALUE"
+         * ]
+         */
+        if (isset($choices[0]) && is_array($choices[0])) {
+            foreach ($choices as $choice) {
+
+                if (is_callable($value)) {
+                    $values[key($choice)] = (string)call_user_func($value, current($choice), key($choice));
+                }
+                else {
+                    $values[key($choice)] = current($choice);
+                }
+            }
+        } else
+
         foreach ($choices as $key => $choice) {
-            // we use a DataTransformer, thus only plain values arrive as choices which can be used directly as value
+
             if (is_callable($value)) {
                 $values[$key] = (string)call_user_func($value, $choice, $key);
             }
@@ -112,8 +140,8 @@ class ChoiceLoader implements ChoiceLoaderInterface
         }
 
         // create internal choice list from loaded values
-        $this->choiceList = new ArrayChoiceList($values[0], $value);
+        $this->choiceList = new ArrayChoiceList($values, $value);
 
-        return $values[0];
+        return $values;
     }
 }
