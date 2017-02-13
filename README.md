@@ -10,7 +10,7 @@ The typical use case is when you get a Many-to-One relation and you need to disp
 form with related entity. If related entity has many thousands of items, using the
 classic select is not suitable. Here comes this bundle.
 
-[![Build Status](https://secure.travis-ci.org/vtoulouse/PUGXAutoCompleterBundle.png?branch=master)](http://travis-ci.org/vctls/PUGXAutoCompleterBundle)
+[![Build Status](https://secure.travis-ci.org/vctls/PUGXAutoCompleterBundle.svg?branch=master)](http://travis-ci.org/vctls/PUGXAutoCompleterBundle)
 
 Documentation
 -------------
