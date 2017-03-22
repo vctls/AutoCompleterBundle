@@ -16,12 +16,12 @@ interface TransformableInterface
      *
      * @return integer
      */
-    public function getId();
+    public function getId() :integer;
 
     /**
      * Returns a string representation of the object.
      *
      * @return string
      */
-    public function __toString();
+    public function __toString() :string ;
 }

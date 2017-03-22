@@ -2,10 +2,9 @@
 
 namespace PUGX\AutocompleterBundle\Form\Transformer;
 
-use PUGX\AutocompleterBundle\Form\Transformer\TransformableInterface as Transformable;
 use Doctrine\Common\Persistence\ManagerRegistry;
+use PUGX\AutocompleterBundle\Form\Transformer\TransformableInterface as Transformable;
 use Symfony\Bridge\Twig\Extension\FormExtension;
-use Symfony\Component\Debug\Exception\UndefinedMethodException;
 use Symfony\Component\Form\DataTransformerInterface;
 use Symfony\Component\Form\Exception\TransformationFailedException;
 
