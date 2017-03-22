@@ -14,9 +14,9 @@ interface TransformableInterface
     /**
      * Returns a unique numeric identifier for the object.
      *
-     * @return integer
+     * @return int
      */
-    public function getId() :integer;
+    public function getId() :int;
 
     /**
      * Returns a string representation of the object.
