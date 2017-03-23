@@ -26,17 +26,27 @@ public function registerBundles()
 
 ## 3. Usage
 
-This bundle requires [jQuery](http://jquery.com/) and [jQuery UI](http://jqueryui.com/).
-As alternative, you can use [Select2](https://select2.github.io/) in place of jQuery UI.
-Note that Select2 version 4 is not supported.
+This bundle requires [jQuery](http://jquery.com/) and [Select2](https://select2.github.io/).
+As alternative, you can use [jQuery UI](http://jqueryui.com/) in place of Select 2.
 
 Installation and configuration of these JavaScript libraries is up to you.
 
-If you prefer to see real code in action, you can find it in [this sandbox project](https://github.com/garak/AutoCompleterSandbox).
+If you prefer to see real code in action, you can find it in [this sandbox project](https://github.com/vctls/AutoCompleterSandbox).
 
 In your template, include autocompleter.js file:
 
-```jinja
+```twig
+{% block javascripts %}
+    <script src="{{ asset('assets/vendor/jquery/dist/jquery.js') }}"></script>
+    <script src="{{ asset('assets/vendor/bootstrap/dist/js/bootstrap.js') }}"></script>
+    <script src="{{ asset('assets/vendor/select2/dist/js/select2.js') }}"></script>
+    <script src="{{ asset('bundles/pugxautocompleter/js/autocompleter-select2.js') }}"></script>
+    <script src="{{ asset('js/app.js') }}"></script>
+{% endblock %}
+```
+Or, if you prefer jQuery UI:
+
+```twig
 {% block javascripts %}
     <script src="//code.jquery.com/jquery-3.1.1.min.js"></script>
     <script src="//code.jquery.com/ui/1.12.1/jquery-ui.min.js"></script>
@@ -45,23 +55,13 @@ In your template, include autocompleter.js file:
 {% endblock %}
 ```
 
-Or, if you prefer Select2:
-
-```jinja
-{% block javascripts %}
-    <script src="//code.jquery.com/jquery-3.1.1.min.js"></script>
-    <script src="//cdnjs.cloudflare.com/ajax/libs/select2/3.5.2/select2.min.js"></script>
-    <script src="{{ asset('bundles/pugxautocompleter/js/autocompleter-select2.js') }}"></script>
-    <script src="{{ asset('js/app.js') }}"></script>
-{% endblock %}
-```
-
 Don't forget to include your stylesheet files.
 
 ```jinja
 {% block stylesheets %}
-    <link rel="stylesheet" href="{{ asset("assets/vendor/jquery-ui/themes/base/jquery-ui.min.css") }}">
-    <link rel="stylesheet" href="{{ asset("assets/vendor/jquery-ui/themes/base/autocomplete.css") }}">
+    <link href="{{ asset('assets/vendor/bootstrap/dist/css/bootstrap.css') }}" rel="stylesheet">
+    <link href="{{ asset('assets/vendor/select2/dist/css/select2.css') }}" rel="stylesheet">
+    <link href="{{ asset('assets/vendor/select2-bootstrap-theme/dist/select2-bootstrap.css') }}" rel="stylesheet">
 {% endblock %}
 ```
 
