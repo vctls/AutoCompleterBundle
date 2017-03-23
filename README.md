@@ -1,4 +1,4 @@
-VctlsAutocompleterBundle
+AutocompleterBundle
 =======================
 
 This is a fork [PUGX/PUGXAutocompleterBundle](https://github.com/PUGX/PUGXAutoCompleterBundle).
