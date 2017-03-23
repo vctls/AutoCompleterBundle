@@ -7,7 +7,7 @@ This bundle has a simple, specific purpose: adding an "autocomplete" (also known
 The typical use case is when you get a Many-to-One or Many-to-Many relation and you need to display a form with related entity.
 If related entity has many thousands of items, using the classic select is not suitable.
 
-[![Build Status](https://secure.travis-ci.org/vctls/AutoCompleterBundle.svg?branch=master)](http://travis-ci.org/vctls/AutoCompleterBundle)
+[![Build Status](https://travis-ci.org/vctls/AutoCompleterBundle.svg?branch=master)](https://travis-ci.org/vctls/AutoCompleterBundle)
 
 Documentation
 -------------
