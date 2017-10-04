@@ -10,7 +10,6 @@
             "email": "toulouse@insa-toulouse.fr"
         }
     ],
-    "homepage": "https://github.com/vctls/PUGXAutoCompleterBundle",
     "require": {
         "php": ">=5.6",
         "doctrine/orm": "^2.5",
