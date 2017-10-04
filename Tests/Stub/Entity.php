@@ -6,13 +6,13 @@ use PUGX\AutocompleterBundle\Form\Transformer\TransformableInterface;
 
 class Entity implements TransformableInterface
 {
-    public function getId()
+    public function getId(): int
     {
         return 42;
     }
 
-    public function __toString()
+    public function __toString(): string
     {
-        return "forty-two";
+        return 'forty-two';
     }
 }

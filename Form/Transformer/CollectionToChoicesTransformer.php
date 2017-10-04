@@ -2,17 +2,14 @@
 
 namespace PUGX\AutocompleterBundle\Form\Transformer;
 
-use PUGX\AutocompleterBundle\Form\Transformer\TransformableInterface as Transformable;
 use Doctrine\Common\Persistence\ManagerRegistry;
+use PUGX\AutocompleterBundle\Form\Transformer\TransformableInterface as Transformable;
 use Symfony\Bridge\Twig\Extension\FormExtension;
-use Symfony\Component\Debug\Exception\UndefinedMethodException;
 use Symfony\Component\Form\DataTransformerInterface;
 use Symfony\Component\Form\Exception\TransformationFailedException;
 
 /**
- * Class CollectionToChoicesTransformer
- *
- * @package PUGX\AutocompleterBundle\Form\Transformer
+ * Class CollectionToChoicesTransformer.
  */
 class CollectionToChoicesTransformer implements DataTransformerInterface
 {
@@ -42,10 +39,13 @@ class CollectionToChoicesTransformer implements DataTransformerInterface
      *
      * The numeric IDs MUST be cast to string in order to keep the currently selected choices upon loading the form,
      * because the comparison with the form values will be done on string values with type checking.
+     *
      * @see FormExtension::isSelectedChoice()
      *
      * @param object[] $collection
+     *
      * @return string[]
+     *
      * @throws \Exception
      */
     public function transform($collection)
@@ -56,15 +56,12 @@ class CollectionToChoicesTransformer implements DataTransformerInterface
 
         $choices = [];
         foreach ($collection as $object) {
-
-            if ( $object instanceof Transformable )  {
-
+            if ($object instanceof Transformable) {
                 $choices[$object->__toString()] = strval($object->getId());
             } else {
                 $class = get_class($object);
                 throw new \Exception("Class $class must implement TransformableInterface.");
             }
-
         }
 
         return $choices;

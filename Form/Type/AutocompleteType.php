@@ -39,10 +39,9 @@ class AutocompleteType extends AbstractType
      */
     public function configureOptions(OptionsResolver $resolver)
     {
-
         $resolver->setDefaults([
             'invalid_message' => 'The selected item does not exist',
-            'choice_loader' => new ChoiceLoader
+            'choice_loader' => new ChoiceLoader(),
         ]);
         $resolver->setRequired([
             'class',

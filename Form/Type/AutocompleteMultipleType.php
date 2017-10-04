@@ -10,11 +10,8 @@ use Symfony\Component\Form\Extension\Core\Type\ChoiceType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
 
-
 /**
- * Class AutocompleteMultipleType
- *
- * @package PUGX\AutocompleterBundle\Form\Type
+ * Class AutocompleteMultipleType.
  */
 class AutocompleteMultipleType extends AbstractType
 {
@@ -48,6 +45,7 @@ class AutocompleteMultipleType extends AbstractType
         $resolver->setDefaults([
             'invalid_message' => 'The selected item does not exist',
             'choice_loader' => new ChoiceLoader(),
+            'multiple' => true,
         ]);
         $resolver->setRequired([
             'class',
@@ -72,5 +70,4 @@ class AutocompleteMultipleType extends AbstractType
     {
         return 'autocomplete';
     }
-
 }

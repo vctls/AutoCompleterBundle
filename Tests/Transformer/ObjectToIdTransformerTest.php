@@ -13,7 +13,7 @@ class ObjectToIdTransformerTest extends \PHPUnit_Framework_TestCase
         $object = new Entity();
         $class = 'foo';
         $transformer = new ObjectToIdTransformer($registry, $class);
-        $this->assertEquals([ "forty-two" =>42 ], $transformer->transform($object));
+        $this->assertEquals(['forty-two' => 42], $transformer->transform($object));
     }
 
     public function testTransformNull()
