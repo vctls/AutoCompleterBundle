@@ -14,12 +14,12 @@ interface TransformableInterface
      *
      * @return int
      */
-    public function getId(): int;
+    public function getId();
 
     /**
      * Returns a string representation of the object.
      *
      * @return string
      */
-    public function __toString(): string;
+    public function __toString();
 }
